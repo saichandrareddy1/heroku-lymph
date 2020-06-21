@@ -7,6 +7,7 @@ import pickle
 app = Flask(__name__)
 
 model = pickle.load(open('model.pkl', 'rb'))
+breast_cancer = pickle.load(open("BreastCancer/Breast_cancer.pkl", "rb"))
 
 @app.route("/")
 def Hello():
@@ -51,16 +52,12 @@ def predict2():
 
     integer_ = [int(i) for i in li]
     final_features = [np.array(integer_)]
-    predict_value = model.predict(final_features)
+    predict_value = breast_cancer.predict(final_features)
 
     if predict_value[0] == 0:
-        output = "normal find"
-    elif predict_value[0] == 1:
-        output = "metastases"
-    elif predict_value[0] == 2:
-        output = "malign lymph"
+        output = 'recurrence-events'
     else:
-        output = "fibrosis"
+        output = 'no-recurrence-events'
 
     return render_template('index.html',
     prediction_text_Algo2=f' patient was {output}')
