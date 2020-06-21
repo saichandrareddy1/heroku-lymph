@@ -14,25 +14,25 @@
 
     <!--################### NAVBAR #################### -->
     <nav class="navbar navbar-expand-sm bg-dark"> 
-        <a class="navbar-brand" style="font-size: 25px; color: white;" href="#">NameError</a>
+        <a class="navbar-brand" style="font-size: 25px; color: white;" href="https://nameerror.ai/">NameError</a>
         <ul class="navbar-nav ml-auto"> 
             <li class="nav-item" style="margin: 0px 20px; font-size: 20px;"> 
-                <a class="nav-link" href="#"> 
+                <a class="nav-link" href="https://nameerror.ai/"> 
                   Home
                 </a> 
             </li> 
             <li class="nav-item" style="margin: 0px 20px;  font-size: 20px;"> 
-                <a class="nav-link" href="#"> 
+                <a class="nav-link" href="https://nameerror.ai/categories/"> 
                   Courses
                 </a> 
             </li> 
             <li class="nav-item" style="margin: 0px 20px; font-size: 20px;"> 
-                <a class="nav-link" href="#"> 
+                <a class="nav-link" href="https://community.nameerror.ai/"> 
                   Community
                 </a> 
             </li>
             <li class="nav-item" style="margin: 0px 20px;padding-right: 20px; font-size: 20px;"> 
-                <a class="nav-link" href="#"> 
+                <a class="nav-link" href="https://nameerror.ai/blog/"> 
                   Blogs
                 </a> 
             </li> 
@@ -41,24 +41,27 @@
 
     <!-- HEADER IMAGE -->
     <div class="jumbotron" style="background-color: darkgray; margin: 0px;">
-        <img src="../static/11.jpg" class="mx-auto d-block">
+        <img src="../static/11.jpg" class="mx-auto d-block" style="height: auto;">
     </div>
    
     <!-- FORMS DATA -->
-    <div class="jumbotron">
+    <div class="jumbotron" style="margin: 0px;" >
 
         <!-- ALGO 1 -->
         <div class="row">
           <div class="col-sm" style="text-align: center;">
                 <!-- <img style="display: block; margin: auto; width: 100%; margin-left: auto; margin-right: auto;" height="500px" width="500px" src="../templates/media/11.jpg"> -->
-                <h1 style="margin-bottom: 20px;">Lympography</h1>
-                <ol>
+                
+                <div class="container">
+                    <h1 style="margin-bottom: 20px;">Lympography</h1>
                     <!-- <li>Lymphatics, enter only one value {1, 2, 3, 4}</li> -->
                     <p>1. Lymphatics, enter only one value {1, 2, 3, 4} - {normal, arched, deformed, displaced}<br>
                     2. Block of affere, enter only one value {1, 2} - {no, yes}<br> 3. Bl. of lymph. c, enter only one value {1, 2} - {no, yes}
                    <br> 4. Bl. of lymph. s, enter only one value {1, 2} - {no, yes}</p>
-                </ol>
-                <form action="{{ url_for('predict')}}"method="post">
+                </div>
+                
+                
+                <form action="{{ url_for('predict')}}"method="post" style="margin-top: 30px;">
                     <div class="row">
                       <div class="col">
                         <input type="text" class="form-control" placeholder="lymphatics" required="required" name="Feature1_Algo1">
@@ -88,23 +91,40 @@
         <!-- Algo 2 -->
             <div class="col-sm" style="text-align: center;">
                   <!-- <img style="display: block; margin: auto; width: 100%; margin-left: auto; margin-right: auto;" height="500px" width="500px" src="../templates/media/11.jpg"> -->
-                  <h1 style="margin-bottom: 20px;">Algorithm 2</h1>
-                  <form action="{{ url_for('predict2')}}"method="post">
+                  <div class="container">
+
+                    <h1 style="margin-bottom: 20px;">Breast Cancer</h1>
+                    <p>
+                        1. inv-nodes :- {0, 1, 2, 3, 4, 5, 6} - {0-2, 3-5, 6-8, 9-11, 12-14, 15-17, 18-20, 21-23, 24-26,
+                            27-29, 30-32, 33-35, 36-39}
+                        <br>
+                        2. node-caps :-  {0, 1, 2} - {yes, no.}
+                        <br>
+                        3. deg-malig :-  {0, 1, 2} - {1, 2, 3.}
+                        <br>
+                        4. irradiat :-  {0, 1} - {yes, no}
+                        <br>
+                    </p>
+
+                  </div>
+                  
+                  
+                  <form action="{{ url_for('predict2')}}"method="post" style="margin-top: 80px;">
                       <div class="row">
                         <div class="col">
-                          <input type="text" class="form-control" placeholder="First name" required="required" name="Feature1_Algo2">
+                          <input type="text" class="form-control" placeholder="inv-nodes" required="required" name="Feature1_Algo2">
                         </div>
                         <div class="col">
-                          <input type="text" class="form-control" placeholder="Last name" required="required"  name="Feature2_Algo2">
+                          <input type="text" class="form-control" placeholder="node-caps" required="required"  name="Feature2_Algo2">
                         </div>
                       </div>
                       <br>
                       <div class="row">
                           <div class="col">
-                            <input type="text" class="form-control" placeholder="First name" required="required" name="Feature3_Algo2">
+                            <input type="text" class="form-control" placeholder="deg-malig" required="required" name="Feature3_Algo2">
                           </div>
                           <div class="col">
-                            <input type="text" class="form-control" placeholder="Last name" required="required" name="Feature4_Algo2">
+                            <input type="text" class="form-control" placeholder="irradiat" required="required" name="Feature4_Algo2">
                           </div>
                       </div>
                       <br>
@@ -151,10 +171,30 @@
     </div>
 
 
-          
-    
-    
+    <!-- Creating Our Blogs -->
 
+    <div class='jumbotron'>
+        <h1 style="text-align: center; margin-bottom: 30px;">Our Blogs</h1>
+        <div class="container">
+            <div class="row">
+              <div class="col-sm">
+                <img src="static/ind.png" class="mx-auto d-block" style="width: 100%;"><br>
+                <p>blog is about<i>"Industries Applications of Machine Learning</i>". In this we have
+                    Buzzwords like machine learning, deep learning, and AI are fundamentally shifting the nature
+                    of the business, and the way we think of them need to stay competitive. In the past decade, 
+                    <a href="https://nameerror.ai/2020/05/31/industries-applications-of-machine-learning/"><strong>Read more...</strong></a></p>
+              </div>
+              <div class="col-sm">
+                <img src="static/c.png" class="mx-auto d-block" width="459px" height="345px" style="width: 100%;"><br>
+                <p>In our last, we discussed how to prepare data for COVID-19 and we saved that 
+                in our CSV files. Now, we are going to use that data to implement a Computer Vision 
+                model from scratch. if you are not aware of last post click here are read it once and 
+                pare data for your model, <a href="https://community.nameerror.ai/2020/05/24/deep-learning-model-for-covid-19-with-cnn-part-1/"><strong>Read more...</strong></a>
+                </p>
+            </div>
+            </div>
+          </div>
+    </div>
 
 </body>
 </html>
