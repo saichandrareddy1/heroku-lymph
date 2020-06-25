@@ -10,8 +10,16 @@ model = pickle.load(open('model.pkl', 'rb'))
 breast_cancer = pickle.load(open("BreastCancer/Breast_cancer.pkl", "rb"))
 
 @app.route("/")
-def Hello():
+def index():
        return render_template("index.html") 
+
+@app.route("/home")
+def home():
+    return render_template("index.html")
+
+@app.route("/info")
+def info():
+    return render_template("info.html")
 
 
 @app.route('/predict',methods=['POST'])
@@ -91,4 +99,4 @@ def predict3():
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)

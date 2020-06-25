@@ -64,111 +64,27 @@
     </div>
     </div>
 
-
-    <!-- Introduction to the data -->
-
-    <div class="container">
-      <div class="row">
-        <div class="col-sm">
-          <p style="text-align: center; font-size: 30px;">Please, know about the<strong><a href="{{url_for('info')}}"> Form data</a></strong></p>
-        </div>
-      </div>
-    </div>
-   
-    <!-- FORMS DATA -->
-    <div class="container-fluid" style="margin: 0px;" >
-
-        <!-- ALGO 1 -->
-        <div class="row">
-          <div class="col-sm" style="text-align: center;">
-                <!-- <img style="display: block; margin: auto; width: 100%; margin-left: auto; margin-right: auto;" height="500px" width="500px" src="../templates/media/11.jpg"> -->
-                <h1 style="margin-bottom: 20px; margin-top: 30px;">Lympography</h1>
-                <form action="{{ url_for('predict')}}"method="post" style="margin-top: 55px;">
-                    <div class="row">
-                      <div class="col">
-                        <input type="text" class="form-control" placeholder="lymphatics" required="required" name="Feature1_Algo1">
-                      </div>
-                      <div class="col">
-                        <input type="text" class="form-control" placeholder="block of affere" required="required"  name="Feature2_Algo1">
-                      </div>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <div class="col">
-                          <input type="text" class="form-control" placeholder="bl. of lymph. c" required="required" name="Feature3_Algo1">
-                        </div>
-                        <div class="col">
-                          <input type="text" class="form-control" placeholder="bl. of lymph. s" required="required" name="Feature4_Algo1">
-                        </div>
-                    </div>
-                    <br>
-                    <button type="submit" class="btn btn-primary">Predict</button>
-                  </form>
-
-                  <br>
-                  <br>
-                  <strong>{{ prediction_text_Algo1 }}</strong>
-          </div>
-
-        <!-- Algo 2 -->
-            <div class="col-sm" style="text-align: center;">
-                  <h1 style="margin-bottom: 20px; margin-top: 30px;">Breast Cancer</h1>
-                  <form action="{{ url_for('predict2')}}"method="post" style="margin-top: 55px;">
-                      <div class="row">
-                        <div class="col">
-                          <input type="text" class="form-control" placeholder="inv-nodes" required="required" name="Feature1_Algo2">
-                        </div>
-                        <div class="col">
-                          <input type="text" class="form-control" placeholder="node-caps" required="required"  name="Feature2_Algo2">
-                        </div>
-                      </div>
-                      <br>
-                      <div class="row">
-                          <div class="col">
-                            <input type="text" class="form-control" placeholder="deg-malig" required="required" name="Feature3_Algo2">
-                          </div>
-                          <div class="col">
-                            <input type="text" class="form-control" placeholder="irradiat" required="required" name="Feature4_Algo2">
-                          </div>
-                      </div>
-                      <br>
-                      <button type="submit" class="btn btn-primary">Predict</button>
-                    </form>
-  
-                    <br>
-                    <br>
-                    <strong>{{ prediction_text_Algo2 }}</strong>
-            </div>
+    <div class="container-fluid">
+        <h1 style="margin-bottom: 20px;">Lympography</h1>
+        <!-- <li>Lymphatics, enter only one value {1, 2, 3, 4}</li> -->
+        <ul>
+            <li>Lymphatics, enter only one value {1, 2, 3, 4} - {normal, arched, deformed, displaced}</li>
+            <li>Block of affere, enter only one value {1, 2} - {no, yes}</li> 
+            <li>Bl. of lymph. c, enter only one value {1, 2} - {no, yes}</li>
+            <li>Bl. of lymph. s, enter only one value {1, 2} - {no, yes}</li>
+        </ul>
     </div>
 
-
-    <!-- Creating Our Blogs -->
-
-    <div class='container-fluid'>
-        <h1 style="text-align: center; margin-bottom: 30px;">Our Blogs</h1>
-        <div class="container-fluid">
-            <div class="row">
-              <div class="col-sm">
-                <img src="static/ind1.png" class="mx-auto d-block" style="width: 100%;"><br>
-                <p>blog is about<i>"Industries Applications of Machine Learning</i>". In this we have
-                    Buzzwords like machine learning, deep learning, and AI are fundamentally shifting the nature
-                    of the business, and the way we think of them need to stay competitive. In the past decade, 
-                    <a href="https://nameerror.ai/2020/05/31/industries-applications-of-machine-learning/"><strong>Read more...</strong></a></p>
-              </div>
-              <div class="col-sm">
-                <img src="static/c1.png" class="mx-auto d-block" style="width: 100%;"><br>
-                <p>In our last, we discussed how to prepare data for COVID-19 and we saved that 
-                in our CSV files. Now, we are going to use that data to implement a Computer Vision 
-                model from scratch. if you are not aware of last post click here are read it once and 
-                pare data for your model, <a href="https://community.nameerror.ai/2020/05/24/deep-learning-model-for-covid-19-with-cnn-part-1/"><strong>Read more...</strong></a>
-                </p>
-            </div>
-            </div>
-          </div>
+    <div class="container-fluid">
+        <h1 style="margin-bottom: 20px;">Breast Cancer</h1>
+        <ul>
+            <li>inv-nodes :- {0, 1, 2, 3, 4, 5, 6} - {0-2, 3-5, 6-8, 9-11, 12-14, 15-17, 18-20, 21-23, 24-26,27-29, 30-32, 33-35, 36-39}</li>
+            <li>node-caps :-  {0, 1, 2} - {yes, no.}</li>
+            <li>deg-malig :-  {0, 1, 2} - {1, 2, 3.}</li>
+            <li>irradiat :-  {0, 1} - {yes, no}</li>
+        </ul>
     </div>
 
-   
-        <!-- Footer -->
     <footer class="page-footer font-small mdb-color pt-4" style="background-color: black;">
 
         <!-- Footer Links -->
