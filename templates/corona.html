@@ -64,37 +64,58 @@
     </div>
     </div>
 
-    <div class="container-fluid" style="text-align: center;">
-        <h1 style="margin-bottom: 20px;">Lympography</h1>
-        <!-- <li>Lymphatics, enter only one value {1, 2, 3, 4}</li> -->
-        <ol>
-            <li>Lymphatics, enter only one value {1, 2, 3, 4} - {normal, arched, deformed, displaced}</li>
-            <li>Block of affere, enter only one value {1, 2} - {no, yes}</li> 
-            <li>Bl. of lymph. c, enter only one value {1, 2} - {no, yes}</li>
-            <li>Bl. of lymph. s, enter only one value {1, 2} - {no, yes}</li>
-        </ol>
+    <!-- Introduction to the data -->
+
+    <div class="container">
+        <div class="row">
+          <div class="col-sm">
+            <p style="text-align: center; font-size: 30px;">Please, know about the<strong><a href="{{url_for('info')}}"> Form data</a></strong></p>
+          </div>
+        </div>
+      </div>
+
+
+    <!-- FORMS DATA -->
+    <div class="container-fluid" style="margin: 0px; background-image: url(../static/corona.jpg);background-repeat: no-repeat; background-size: cover;" >
+
+        <!-- ALGO 1 -->
+        <div class="row" style="margin-top:0px;">
+          <div class="col-sm" style="text-align: center;">
+                <!-- <img style="display: block; margin: auto; width: 100%; margin-left: auto; margin-right: auto;" height="500px" width="500px" src="../templates/media/11.jpg"> -->
+                <h1 style="margin-bottom: 20px; margin-top: 30px; color: blue;">Corona</h1>
+                <form action="{{ url_for('predict3')}}"method="post" style="margin-top: 55px; ">
+                    <div class="row">
+                      <div class="col">
+                        <input type="text" class="form-control" placeholder="Fever" required="required" name="Feature1_Algo3">
+                      </div>
+                      <div class="col">
+                        <input type="text" class="form-control" placeholder="backpain" required="required"  name="Feature2_Algo3">
+                      </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col">
+                          <input type="text" class="form-control" placeholder="age" required="required" name="Feature3_Algo3">
+                        </div>
+                        <div class="col">
+                          <input type="text" class="form-control" placeholder="runningNose" required="required" name="Feature4_Algo3">
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="breathingproblem" required="required" name="Feature5_Algo3">
+                          </div>
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-primary">Predict</button>
+                  </form>
+
+                  <br>
+                  <br>
+                  <strong style="color: darkblue; font-size: 50px; background-color: white;">{{ prediction_text_Algo3 }}</strong>
+          </div>
+    </div>
     </div>
 
-    <div class="container-fluid" style="text-align: center;">
-        <h1 style="margin-bottom: 20px;">Breast Cancer</h1>
-        <ol>
-            <li>inv-nodes :- {0, 1, 2, 3, 4, 5, 6} - {0-2, 3-5, 6-8, 9-11, 12-14, 15-17, 18-20, 21-23, 24-26,27-29, 30-32, 33-35, 36-39}</li>
-            <li>node-caps :-  {0, 1} - {yes, no.}</li>
-            <li>deg-malig :-  {0, 1, 2} - {1, 2, 3.}</li>
-            <li>irradiat :-  {0, 1} - {yes, no}</li>
-        </ol>
-    </div>
 
-    <div class="container-fluid" style="text-align: center;">
-        <h1 style="margin-bottom: 20px;">Corona</h1>
-        <ol>
-            <li>Fever :- {0, 1}</li>
-            <li>BackPain :-  {0, 1} - {yes, no.}</li>
-            <li>age :- {Up to 100}</li>
-            <li>running Nose :-  {0, 1} - {yes, no}</li>
-            <li>Breating problem :- {0, 1} - {yes, no}</li>
-        </ol>
-    </div>
 
     <!-- courses -->
 
@@ -160,6 +181,8 @@
             </div>
           </div>
     </div>
+
+    
 
     <footer class="page-footer font-small mdb-color pt-4" style="background-color: black;">
 

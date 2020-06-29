@@ -34,7 +34,7 @@
   </nav>
 
   <!-- HEADER IMAGE -->
-  <div class="container-fluid" style="background-color: darkgray; margin: 10px; background-image: url(../static/ind1.png); background-repeat: no-repeat; background-size: cover;">
+  <div class="container-fluid" style="background-color: darkgray; margin: 0px; background-image: url(../static/ind1.png); background-repeat: no-repeat; background-size: cover;">
 
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
@@ -141,31 +141,79 @@
             </div>
     </div>
 
-
-    <!-- Creating Our Blogs -->
-
-    <div class='container-fluid'>
-        <h1 style="text-align: center; margin-bottom: 30px;">Our Blogs</h1>
-        <div class="container-fluid">
-            <div class="row">
-              <div class="col-sm">
-                <img src="static/ind1.png" class="mx-auto d-block" style="width: 100%;"><br>
-                <p>blog is about<i>"Industries Applications of Machine Learning</i>". In this we have
-                    Buzzwords like machine learning, deep learning, and AI are fundamentally shifting the nature
-                    of the business, and the way we think of them need to stay competitive. In the past decade, 
-                    <a href="https://nameerror.ai/2020/05/31/industries-applications-of-machine-learning/"><strong>Read more...</strong></a></p>
-              </div>
-              <div class="col-sm">
-                <img src="static/c1.png" class="mx-auto d-block" style="width: 100%;"><br>
-                <p>In our last, we discussed how to prepare data for COVID-19 and we saved that 
-                in our CSV files. Now, we are going to use that data to implement a Computer Vision 
-                model from scratch. if you are not aware of last post click here are read it once and 
-                pare data for your model, <a href="https://community.nameerror.ai/2020/05/24/deep-learning-model-for-covid-19-with-cnn-part-1/"><strong>Read more...</strong></a>
-                </p>
-            </div>
-            </div>
-          </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+          <p style="text-align: center; font-size: 30px;">Know about the corona<strong><a href="{{url_for('corona')}}"> Symtoms Predictor</a></strong></p>
+        </div>
+      </div>
     </div>
+
+
+    <!-- courses -->
+
+    <div class="container-fluid" style="margin-top: 20px;">
+      <div class="row">
+        <div class="col-sm">
+          <h1 style="text-align: center; margin-top: 50px;">DataScience</h1>
+          <img src="../static/data-science.jpg" style="margin: auto; display: block; width: 100%;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+          <p style="margin-top: 30px; font-size: 20px; text-align: center;">
+              This master level course is for you if you are looking 
+              to learn the Data Science in and out within a short time!
+          </p>
+          <p style="margin-top: 30px; font-size: 20px; text-align: center; zoom: 1;">See our <strong><a href="https://nameerror.ai/courses/data-science-course/">Curriculum</a></strong></p>
+          <a href="https://pages.razorpay.com/pl_Ey8QWfagTHLZCh/view"><button type="submit" class="btn btn-primary" style="display: block; margin-left: 40%; position: absolute;" >Enroll</button></a>
+        </div>
+        <div class="col-sm">
+          <h1 style="text-align: center; margin-top: 50px;">Machine Learning</h1>
+          <img src="../static/ML.jpg" style="margin: auto; display: block; width: 100%; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+          <p style="margin-top: 30px; font-size: 20px; text-align: center;">
+              This master level course is for you 
+              if you are looking to learn the Machine Learning 
+              in and out within a short time!
+          </p>
+          <p style="margin-top: 30px; font-size: 20px; text-align: center; zoom: 1;">See our <strong><a href="https://nameerror.ai/courses/machine-learning-course/">Curriculum</a></strong></p>
+          <a href="https://pages.razorpay.com/pl_Ey8xX9ISi224bW/view"><button type="submit" class="btn btn-primary" style="display: block; margin-left: 40%; position: absolute;" >Enroll</button></a>
+        </div>
+        <div class="col-sm">
+          <h1 style="text-align: center; margin-top: 50px;">Python</h1>
+          <img src="../static/python.jpeg" style="margin: auto; display: block; width: 100%;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+          <p style="margin-top: 30px; font-size: 20px; text-align: center;">
+              Gain real-world Python experience with projects designed 
+              by industry experts. Build your portfolio and advance your Python career.
+          </p>
+          <p style="margin-top: 30px; font-size: 20px; text-align: center; zoom: 1;">See our <strong><a href="https://nameerror.ai/courses/python-programming/">Curriculum</a></strong></p>
+          <a href="https://pages.razorpay.com/pl_Ey9QrjrRTwnJi2/view"><button type="submit" class="btn btn-primary" style="display: block; margin-left: 40%; position: absolute;" >Enroll</button></a>
+      </div>
+      </div>
+    </div>
+
+
+
+
+  <!-- Blogs -->
+  <div class='container-fluid' style="margin-top:50px;">
+      <h1 style="text-align: center; margin-bottom: 30px;">Our Blogs</h1>
+      <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm">
+              <img src="static/ind1.png" class="mx-auto d-block" style="width: 100%;"><br>
+              <p>blog is about<i>"Industries Applications of Machine Learning</i>". In this we have
+                  Buzzwords like machine learning, deep learning, and AI are fundamentally shifting the nature
+                  of the business, and the way we think of them need to stay competitive. In the past decade, 
+                  <a href="https://nameerror.ai/2020/05/31/industries-applications-of-machine-learning/"><strong>Read more...</strong></a></p>
+            </div>
+            <div class="col-sm">
+              <img src="static/c1.png" class="mx-auto d-block" style="width: 100%;"><br>
+              <p>In our last, we discussed how to prepare data for COVID-19 and we saved that 
+              in our CSV files. Now, we are going to use that data to implement a Computer Vision 
+              model from scratch. if you are not aware of last post click here are read it once and 
+              pare data for your model, <a href="https://community.nameerror.ai/2020/05/24/deep-learning-model-for-covid-19-with-cnn-part-1/"><strong>Read more...</strong></a>
+              </p>
+          </div>
+          </div>
+        </div>
+  </div>
 
    
         <!-- Footer -->

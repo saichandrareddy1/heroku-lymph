@@ -1,13 +1,19 @@
 from flask import Flask, render_template, request, jsonify
 import numpy as np
 import pickle
-
+from sklearn.preprocessing import StandardScaler
 
 
 app = Flask(__name__)
 
 model = pickle.load(open('model.pkl', 'rb'))
 breast_cancer = pickle.load(open("BreastCancer/Breast_cancer.pkl", "rb"))
+corona_model = pickle.load(open('corona/corona.pkl', 'rb'))
+
+def norm(array):
+    sc = StandardScaler()
+    val = sc.fit_transform(array)
+    return val
 
 @app.route("/")
 def index():
@@ -20,6 +26,10 @@ def home():
 @app.route("/info")
 def info():
     return render_template("info.html")
+
+@app.route("/corona")
+def corona():
+    return render_template("corona.html")
 
 
 @app.route('/predict',methods=['POST'])
@@ -77,23 +87,20 @@ def predict3():
     feature2 = request.form['Feature2_Algo3']
     feature3 = request.form['Feature3_Algo3']
     feature4 = request.form['Feature4_Algo3']
+    feature5 = request.form['Feature5_Algo3']
+    li = [feature1, feature2, feature3, feature4, feature5]
 
-    li = [feature1, feature2, feature3, feature4]
-
-    integer_ = [int(i) for i in li]
+    integer_ = [i for i in li]
     final_features = [np.array(integer_)]
-    predict_value = model.predict(final_features)
+    final_features = norm(final_features)
+    predict_value = corona_model.predict(final_features)
 
     if predict_value[0] == 0:
-        output = "normal find"
-    elif predict_value[0] == 1:
-        output = "metastases"
-    elif predict_value[0] == 2:
-        output = "malign lymph"
+        output = "Not Effected"
     else:
-        output = "fibrosis"
+        output = "Effected"
 
-    return render_template('index.html',
+    return render_template('corona.html',
     prediction_text_Algo3=f' patient was {output}')
 
 
